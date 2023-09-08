@@ -1,0 +1,82 @@
+Linux terminal (GitBash) commands (1)
+
+1) Посмотреть где я 
+	pwd
+2) Создать папку 
+	mkdir 'Linux terminal'
+3) Зайти в папку 
+	cd 'Linux terminal'
+4) Создать 3 папки 
+	mkdir folder1 folder2 folder3
+5) Зайти в любую папку 
+	cd folder1
+6) Создать 5 файлов (3 txt, 2 json) 
+	touch file1.txt file2.txt file3.txt file4.json file5.json
+7) Создать 3 папки 
+	mkdir folder1.1 folder1.2 folder1.3
+8) Вывести список содержимого папки 
+	ls -a или ls -l или ls -la
+9) + Открыть любой txt файл 
+	cat file1.txt
+10) + написать туда что-нибудь, любой текст 
+	cat >> filecd.txt нажать enter, что-то написать и нажать enter
+11) + сохранить и выйти 
+	Ctrl + C (выход из режима редактирования)
+12) Выйти из папки на уровень выше 
+	cd ..
+13) переместить любые 2 файла, которые вы создали, в любую другую папку 
+	cd folder1
+	mv file3.txt file5.json ../folder2
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку 
+	cp file2.txt file4.json ../folder3
+15) Найти файл по имени
+	find -name file2.txt
+16) просмотреть содержимое в реальном времени
+	tail -f file1.txt
+17) вывести несколько первых строк из текстового файла
+	head -2 file1.txt
+18) вывести несколько последних строк из текстового файла
+	tail -2 file1.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+	less file1.txt
+20) вывести дату и время
+	date
+
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request 
+http://162.55.220.72:5005/terminal-hw-request (код ответа 404)
+Если поменять порт на 5006 и отправить запрос:
+curl 'GET http://162.55.220.72:5006/terminal-hw-request'
+приходит ответ:
+{
+  "Intro": "Hello!! This is your the first response from server",
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+    "result": [
+      "Your_String",
+      "Your_number"
+    ]
+  }
+}
+
+curl 'http://162.55.220.72:5006/get_method?name=Mariia&age=26'
+[
+  "Mariia",
+  "26"
+]
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 
+sh Task2.sh
+Текст скрипта Task2.sh ниже:
+mkdir Task2
+cd Task2
+mkdir f1 f2 f3
+cd f1
+touch file1.txt file2.txt file3.txt file4.json file5.json
+mkdir f1.1 f1.2
+ls -la
+mv file3.txt file5.json f1.1
